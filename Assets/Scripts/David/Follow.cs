@@ -5,8 +5,8 @@ using UnityEngine;
 public class Follow : MonoBehaviour
 {
     public Transform targetObj;
-    public float detectionRadius = 10f; // Radio de detección
-    public float moveSpeed = 5f; // Velocidad de movimiento
+    public float detectionRadius = 10f; 
+    public float moveSpeed = 5f; 
     private bool isPlayerInRange = false;
 
     // Update is called once per frame
