@@ -508,6 +508,7 @@ GameObject:
   - component: {fileID: 1246872561}
   - component: {fileID: 1246872560}
   - component: {fileID: 1246872559}
+  - component: {fileID: 1246872563}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -534,7 +535,7 @@ MonoBehaviour:
     m_Bits: 8
   playerLives: 5
   cameraTransform: {fileID: 963194228}
-  mouseSensitivity: 100
+  mouseSensitivity: 300
 --- !u!136 &1246872560
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -602,6 +603,22 @@ Transform:
   - {fileID: 496195167}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1246872563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246872558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de71714cbf5d8647b5e7fcf8665ebfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 9058340163598375621, guid: 57e44b001dd1c5f4e884853b9659aa56, type: 3}
+  firePoint: {fileID: 1246872562}
+  projectileSpeed: 20
+  fireRate: 0.5
 --- !u!1 &1398664903
 GameObject:
   m_ObjectHideFlags: 0
