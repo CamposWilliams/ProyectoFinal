@@ -4,8 +4,9 @@ header("Content-Type: application/json");
 $mysqli = new mysqli("localhost", "root", "", "juegoPuntaje");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = $_POST["nombre"];
-    //Inserta Usuario
+    $nombre = $_POST["username"]; 
+
+    // Inserta Usuario
     $sql = "SELECT * FROM Usuarios WHERE nombre = ?";
     $checkQuery = $mysqli->prepare($sql);
     $checkQuery->bind_param("s", $nombre);
@@ -22,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $userId = $insertQuery->insert_id;
 
-        $user = ["user_id" => $userId, "username" => $nombre];
+        $user = ["user_id" => $userId, "username" => $nombre]; 
 
         echo json_encode(["message" => "Usuario insertado con éxito", "data" => ["user" => $user]]);
     }
