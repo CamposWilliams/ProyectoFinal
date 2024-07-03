@@ -1,8 +1,8 @@
 using System;
 
 [Serializable]
-public class  model_Usuario
+public class model_Usuario
 {
-    public int user_id;
-    public string username;
+    public string message;
+    public dataModel_Usuario data;
 }
