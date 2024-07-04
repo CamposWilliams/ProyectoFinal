@@ -4,25 +4,28 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-    public GameObject projectilePrefab;
+    public GameObject bulletPrefab;
     public Transform firePoint;
-    public float projectileSpeed = 20f;
-    public float fireRate = 0.5f;
-    private float nextFireTime = 0f;
+    public float bulletSpeed = 5f; 
 
     void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time >= nextFireTime)
+        if (Input.GetMouseButtonDown(1))
         {
             Shoot();
-            nextFireTime = Time.time + fireRate;
         }
     }
 
     void Shoot()
     {
-        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-        Rigidbody rb = projectile.GetComponent<Rigidbody>();
-        rb.velocity = firePoint.forward * projectileSpeed;
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        BulletMovement bulletMovement = bullet.GetComponent<BulletMovement>();
+        if (bulletMovement != null)
+        {
+ 
+            Vector3 shootDirection = firePoint.position + firePoint.forward;
+            bulletMovement.direction = (shootDirection - firePoint.position).normalized;
+            bulletMovement.speed = bulletSpeed;
+        }
     }
 }
