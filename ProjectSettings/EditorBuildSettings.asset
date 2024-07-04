@@ -4,5 +4,26 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MenuPrincipal.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Nivel1.unity
+    guid: 636f2e7954b772d40b950df130eb4e75
+  - enabled: 1
+    path: Assets/Scenes/Nivel2.unity
+    guid: e4173e180e87bae4997a53970ccc4564
+  - enabled: 1
+    path: Assets/Scenes/Derrota.unity
+    guid: f1908f3cb6e95094d9d274b6d2f1766a
+  - enabled: 1
+    path: Assets/Scenes/Victoria.unity
+    guid: a7011f8d7f6db6741afea5362f289bd1
+  - enabled: 1
+    path: Assets/Scenes/Rankig List.unity
+    guid: 4e52fb9e9144ebf4aa0deb12bb880779
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: b8365739d683ff34da57b17f84250862
   m_configObjects: {}
