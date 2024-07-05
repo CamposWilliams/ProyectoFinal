@@ -11,19 +11,22 @@ public class Follow : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        float distanceToPlayer = Vector3.Distance(transform.position, targetObj.position);
+{
+    if (targetObj == null)
+        return; 
 
-        if (distanceToPlayer <= detectionRadius)
-        {
-            isPlayerInRange = true;
-            MoveTowardsPlayer();
-        }
-        else
-        {
-            isPlayerInRange = false;
-        }
+    float distanceToPlayer = Vector3.Distance(transform.position, targetObj.position);
+
+    if (distanceToPlayer <= detectionRadius)
+    {
+        isPlayerInRange = true;
+        MoveTowardsPlayer();
     }
+    else
+    {
+        isPlayerInRange = false;
+    }
+}
 
     void MoveTowardsPlayer()
     {

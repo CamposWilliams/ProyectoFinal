@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Movement : MonoBehaviour
 {
@@ -65,6 +68,7 @@ public class Movement : MonoBehaviour
         if (playerLives <= 0)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene("Rankig List");
         }
     }
 
@@ -73,6 +77,7 @@ public class Movement : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             TakeDamage(1); 
+
         }
     }
 }
