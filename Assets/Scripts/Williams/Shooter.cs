@@ -6,11 +6,11 @@ public class Shooter : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform firePoint;
-    public float bulletSpeed = 5f; 
+    public float bulletSpeed = 20f;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
             Shoot();
         }
@@ -22,9 +22,7 @@ public class Shooter : MonoBehaviour
         BulletMovement bulletMovement = bullet.GetComponent<BulletMovement>();
         if (bulletMovement != null)
         {
- 
-            Vector3 shootDirection = firePoint.position + firePoint.forward;
-            bulletMovement.direction = (shootDirection - firePoint.position).normalized;
+            bulletMovement.direction = firePoint.forward;
             bulletMovement.speed = bulletSpeed;
         }
     }

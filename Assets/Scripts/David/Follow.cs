@@ -5,28 +5,16 @@ using UnityEngine;
 public class Follow : MonoBehaviour
 {
     public Transform targetObj;
-    public float detectionRadius = 10f; 
-    public float moveSpeed = 5f; 
-    private bool isPlayerInRange = false;
+    public float moveSpeed = 5f;
 
     // Update is called once per frame
     void Update()
-{
-    if (targetObj == null)
-        return; 
-
-    float distanceToPlayer = Vector3.Distance(transform.position, targetObj.position);
-
-    if (distanceToPlayer <= detectionRadius)
     {
-        isPlayerInRange = true;
+        if (targetObj == null)
+            return;
+
         MoveTowardsPlayer();
     }
-    else
-    {
-        isPlayerInRange = false;
-    }
-}
 
     void MoveTowardsPlayer()
     {
@@ -35,7 +23,7 @@ public class Follow : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player") && isPlayerInRange)
+        if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<Movement>().TakeDamage(1);
         }
